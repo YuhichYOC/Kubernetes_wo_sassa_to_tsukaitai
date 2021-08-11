@@ -129,3 +129,8 @@ request from succeeding
 ```
 - 「cidr not assigned」を手掛かりに kubeadm init に --pod-network-cidr オプションを付けたら上手くいった。要するにただのまぐれ
 - --kubeconfig は指定している ( 5-2 で作成 ) はずだし、--master はググっても情報がない。こんなのどう対処すればいいの
+
+---
+## Q : flannel ( や Calico などの CNI プラグイン ) って必要なの？
+- A : 必須です。ないと動きません。CNI プラグインはクラスターの外からのアクセスを Kubernetes クラスター内のコンテナ ( Pod と呼ぶ ) へ伝えるための必須コンポーネントです
+- 外から内、内から内、内から外の通信を行うためのコンポーネントらしいです
